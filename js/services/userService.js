@@ -1,5 +1,4 @@
-angular
-	.module('app').service('userService', function($resource){
+angular.module('app').service('userService', function($resource){
 
    var conn = $resource('http://localhost:3000/user');
 

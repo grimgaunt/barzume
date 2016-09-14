@@ -1,5 +1,5 @@
 angular.module('app').controller('userCtrl', function($scope, $resource, userService){
-console.log('servertest controller init');
+console.log('user controller init');
 
 
 $scope.data = {};

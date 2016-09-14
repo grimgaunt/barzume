@@ -7,27 +7,36 @@ angular.module('app')
   $routeProvider
 
   .when('/profile', {
-        templateUrl: 'templates/profile.html',
+        templateUrl: './templates/profile.html',
         controller: 'userCtrl'
     
   })
 
-   .when('/business', {
-        templateUrl: 'templates/business.html',
-        controller: 'business'
+  .when('/regprofile', {
+        templateUrl: './templates/regprofile.html',
+        controller: 'userCtrl'
 
   })
 
+  .when('/business', {
+          templateUrl: './templates/business.html',
+          controller: 'businessCtrl'
+  })
+
+  .when('/regbusiness', {
+          templateUrl: './templates/regbusiness.html',
+          controller: 'businessCtrl'
+  })
+
   .when('/posting', {
-          templateUrl: 'templates/posting.html',
-          controller: 'posting'
-    })
+          templateUrl: './templates/posting.html',
+          controller: 'postingCtrl'
+  })
 
-  .when('/regprofile', {
-          templateUrl: 'templates/regprofile.html',
-          controller: 'regprofile'
-    });
-
+    .when('/regposting', {
+          templateUrl: './templates/regposting.html',
+          controller: 'postingCtrl'
+  });
 
 
   
