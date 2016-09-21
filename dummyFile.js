@@ -17,6 +17,16 @@ var users = new user(
 	userEmail: "bartender@gmail.com",
 	//I was thinking about Tinder premium "swipe in location" feature here, maybe give employees the option of location based or area search
 	userHomeLoc: "Denver"
+  },
+  {
+  userName: "Rumple Stiltz",
+  userRating:[],
+  userHistory:[],
+  userPic: "http://genericurl.com",
+  userPhone:"303-303-3030",
+  userEmail: "rumple@gmail.com",
+  //I was thinking about Tinder premium "swipe in location" feature here, maybe give employees the option of location based or area search
+  userHomeLoc: "Kansas City"
   }
 );
 

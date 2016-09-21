@@ -2,6 +2,7 @@ var posting = require('./js/schema/postingSchema.js');
 var user = require('./js/schema/userSchema.js');
 var business = require('./js/schema/businessSchema.js');
 var mongoose = require('mongoose');
+var morgan = require('morgan');
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
