@@ -32,18 +32,18 @@ exports.handler = (event, context, callback) => {
     };
     //POST params   
     var paramPost = {
-    TableName: 'user',
+    TableName: 'business',
     Item: {
-        "userId":{"S":"two"},
-        "userName":{"S": "Linda"},
-        "userPic":{"S":"imgur.com"} 
+        "businessId":{"S":"two"},
+        "businessName":{"S": "Linda"},
+        "businessPic":{"S":"imgur.com"} 
     }
     };
     //DELETE params
     var paramDelete = {
-    TableName: 'user',
+    TableName: 'business',
     Key: { 
-        'userId':{"S":'two'}
+        'businessId':{"S":'two'}
     }
     };
     
