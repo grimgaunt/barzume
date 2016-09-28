@@ -8,71 +8,58 @@ let dynamo = new doc.DynamoDB();
 exports.handler = (event, context, callback) => {
     //GET params
     var paramGet = {
-    TableName: 'posting',
+    TableName: 'organization',
     Key: { 
-        'postingId':{"S": event.postingId}
+        'orgId':{"S":event.orgId}
     },
     AttributesToGet: [ 
-        'postingTitle',
-        'postingDesc'
+        'orgName',
+        'orgPic'
     ]
     };
     //PUT params
     var paramPut = {
-    TableName: 'posting',
+    TableName: 'organization',
     Key:{
-       'postingId':{'S':'1'} 
+       'orgId':{'S':event.orgId} 
     },
-    UpdateExpression: "set postingTitle = :t",
+    UpdateExpression: "set orgName = :n",
     ExpressionAttributeValues:{
-        ":t":{"S":"tends bar well"}
+        ":n":{"S":"Shotgun Willies"}
     },
 
     ReturnValues:"UPDATED_NEW"
     };
     //POST params   
     var paramPost = {
-    TableName: 'posting',
+    TableName: 'organization',
     Item: {
-        "postingId":{"S":"2"},
-        "postingName":{"S": "dishwasher"},
-        "postingDesc":{"S":"washes dishes"} 
+        "orgId":{"S":"2"},
+        "orgName":{"S": "Grits n Such"},
+        "orgPic":{"S":"imgur.com"} 
     }
     };
     //DELETE params
     var paramDelete = {
-    TableName: 'posting',
+    TableName: 'organization',
     Key: { 
-        'postingId':{"S":'2'}
+        'orgId':{"S":event.orgId}
     }
     };
     
         //GET request
         if (event.httpMethod == "GET"){
-            if(paramGet.postingId === 3){
-                dynamo.scan(paramGet, function(err, data) {
-                        if (err) {
-                            console.log("error --",err);
-                            context.fail(err);
-                                }
-                        else {
-                            console.log("getallitems =",data); // successful response
-                            context.succeed(data);
-                            }
-                        });
-                     }
-        else dynamo.getItem(paramGet, function(err, data) {
+        dynamo.getItem(paramGet, function(err, data) {
             if (err) {
         console.log("error --",err);
         context.fail(err);
         }
         
             else {
-        console.log("getoneitem =",data); // successful response
+        console.log("item =",data); // successful response
         context.succeed(data);
             }
         })}
-        
         //PUT request
         else if (event.httpMethod == "PUT"){
         dynamo.updateItem(paramPut, function(err, data) {

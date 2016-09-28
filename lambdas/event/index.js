@@ -8,22 +8,22 @@ let dynamo = new doc.DynamoDB();
 exports.handler = (event, context, callback) => {
     //GET params
     var paramGet = {
-    TableName: 'business',
+    TableName: 'events',
     Key: { 
-        'businessId':{"S":'one'}
+        'eventsId':{"S":event.eventsId}
     },
     AttributesToGet: [ 
-        'businessName',
-        'businessPic'
+        'eventsName',
+        'eventsPic'
     ]
     };
     //PUT params
     var paramPut = {
-    TableName: 'business',
+    TableName: 'organization',
     Key:{
-       'businessId':{'S':'one'} 
+       'eventsId':{'S':event.eventsId} 
     },
-    UpdateExpression: "set businessName = :n",
+    UpdateExpression: "set eventsName = :n",
     ExpressionAttributeValues:{
         ":n":{"S":"Shotgun Willies"}
     },
@@ -32,18 +32,18 @@ exports.handler = (event, context, callback) => {
     };
     //POST params   
     var paramPost = {
-    TableName: 'business',
+    TableName: 'events',
     Item: {
-        "businessId":{"S":"two"},
-        "businessName":{"S": "Linda"},
-        "businessPic":{"S":"imgur.com"} 
+        "eventsId":{"S":"2"},
+        "eventsName":{"S": "Grits n Such"},
+        "eventsPic":{"S":"imgur.com"} 
     }
     };
     //DELETE params
     var paramDelete = {
-    TableName: 'business',
+    TableName: 'events',
     Key: { 
-        'businessId':{"S":'two'}
+        'eventsId':{"S":event.eventsId}
     }
     };
     
