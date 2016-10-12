@@ -4,6 +4,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+	<script src="./node_modules/pubnub/dist/web/pubnub.min.js"></script>
+
+
+
 
     <script src="./app.js"></script>
 
@@ -11,10 +15,12 @@
 	<script src="./js/services/userService.js"></script>
 	<script src="./js/services/postingService.js"></script>
 	<script src="./js/services/businessService.js"></script>
+	<script src="./js/services/chatService.js"></script>
 
 	<script src="./js/controllers/businessController.js"></script>
 	<script src="./js/controllers/postingController.js"></script>
 	<script src="./js/controllers/userController.js"></script>
+	<script src="./js/controllers/chatController.js"></script>
 
 	<script src="./js/routes/routes.js"></script>
 
@@ -31,6 +37,8 @@
 <a href ="#regprofile">Sign Up</a>
 <a href ="#regbusiness">Own a Business?</a>
 <a href ="#regposting">Post Jobs</a>
+<a href ="#chat">Chat</a>
+
 
 <div ng-view></div>
 

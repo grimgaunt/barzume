@@ -36,9 +36,16 @@ angular.module('app')
     .when('/regposting', {
           templateUrl: './templates/regposting.html',
           controller: 'postingCtrl'
-  });
 
-
+ 
   
+  })
+
+     .when('/chat', {
+          templateUrl: './templates/chat.html',
+          controller: 'chatCtrl'
+
+
+  });
   
 });
