@@ -6,12 +6,15 @@ console.log('chat controller init');
 		subscribeKey: "sub-c-0091142c-841c-11e6-a68c-0619f8945a4f",
 		logVerbosity: true
 	});
+	var sender = {"id":"senderID"};
+	var reciever = {"id":"recieverID"};
 
 	$scope.sendMsg = function(){
 
 		pubnub.publish({
-			channel   : 'barzume',
+			channel   : 'barzume' + reciever.id,
 			message   : $scope.message,
+
 
 		}, function (status, response) {
 			if (status.error) {
